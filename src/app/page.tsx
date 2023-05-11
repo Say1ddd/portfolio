@@ -1,95 +1,102 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import NavLink from '@/Components/NavLink';
+import Image from 'next/image';
+
+const skills = [
+  'Javascript',
+  'Typescript',
+  'Tailwindcss',
+  'React',
+  'Nextjs',
+  'PHP',
+  'Laravel',
+];
+
+const projects = [
+  {
+    title: 'Project 1',
+    description: 'Description of project 1',
+  },
+  {
+    title: 'Project 2',
+    description: 'Description of project 2',
+  },
+  {
+    title: 'Project 3',
+    description: 'Description of project 3',
+  },
+];
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <main>
+      <nav>
+        <ul>
+          <NavLink href="/about">About</NavLink>
+          <NavLink href="/projects">My Projects</NavLink>
+          <NavLink href="/contact">Contact</NavLink>
+        </ul>
+      </nav>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      {/* hero */}
+      <section id="hero">
+        <p>frontend developer</p>
+        <h2>CREATING AMAZING WEBSITES</h2>
+        <span>for your</span>
+        <span>BUSINESSES</span>
+          <div>
+            {/* <Image
+              src="#"
+              alt="Picture of the author"
+              width={500}
+              height={500}
+            /> */}
+          </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      {/* soft and hard skills */}
+      </section>
+      <section id="skills">
+        <h2>What I&apos;m Good At</h2>
+        <ul>
+          {skills.map((skill) => (
+            <li key={skill}>{skill}</li>
+          ))}
+        </ul>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+      {/* project lists */}
+      <section id="projects">
+        <h2>My Best Projects</h2>
+        {projects.map((project) => (
+          <ul key={project.title}>
+            <li>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+            </li>
+          </ul>
+        ))}
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+      {/* awards and contributions */}
+      <section id="awards">
+        <h2>Award and Contributions</h2>
+        <ul>
+          <li>Best Web Developer 2021</li>
+          <li>Best Web Developer 2020</li>
+          <li>Best Web Developer 2019</li>
+        </ul>
+      </section>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      {/* contact me */}
+      <section id="contacts">
+        <h2>Contact Me</h2>
+          <div>email</div>
+          <div>mobile</div>
+      </section>
+
+      {/* footer */}
+      <footer>
+        <p>Copyright Sajidikhlas&copy; 2021</p>
+      </footer>
     </main>
   );
-}
+};
