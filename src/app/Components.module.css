@@ -1,0 +1,23 @@
+.navlinkList {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.navlinkLink {
+    position: relative;
+    color: var(--clr-light);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.navlinkLink::after {
+    content: "-";
+}
+
+.navlinkList:hover .navlinkLink {
+    transform: translateX(-3rem);
+}
