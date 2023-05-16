@@ -1,83 +1,80 @@
 import NavLink from '@/Components/NavLink';
 import Image from 'next/image';
-
-const skills = [
-  'Javascript',
-  'Typescript',
-  'Tailwindcss',
-  'React',
-  'Nextjs',
-  'PHP',
-  'Laravel',
-];
-
-const projects = [
-  {
-    title: 'Project 1',
-    description: 'Description of project 1',
-  },
-  {
-    title: 'Project 2',
-    description: 'Description of project 2',
-  },
-  {
-    title: 'Project 3',
-    description: 'Description of project 3',
-  },
-];
+import styles from '@/app/Globals.module.css';
 
 export default function Home() {
   return (
-    <main>
-      <nav>
-        <ul>
+    <main className={styles.main}>
+        <ul className={styles.sidelink}>
           <NavLink href="/about">About</NavLink>
           <NavLink href="/projects">My Projects</NavLink>
           <NavLink href="/contact">Contact</NavLink>
         </ul>
-      </nav>
 
       {/* hero */}
-      <section id="hero">
-        <p>frontend developer</p>
-        <h2>CREATING AMAZING WEBSITES</h2>
-        <span>for your</span>
-        <span>BUSINESSES</span>
-          <div>
-            {/* <Image
-              src="#"
-              alt="Picture of the author"
-              width={500}
-              height={500}
-            /> */}
-          </div>
-
-      {/* soft and hard skills */}
-      </section>
-      <section id="skills">
-        <h2>What I&apos;m Good At</h2>
-        <ul>
-          {skills.map((skill) => (
-            <li key={skill}>{skill}</li>
-          ))}
-        </ul>
+      <section id="hero" className={styles.hero}>
+          <p>Frontend Developer</p>
+          <span className={styles.heroPrimary}>CREATING AMAZING WEBSITES</span>
+          <span className={styles.heroSecondary}></span>
+            <div>
+              {/* <Image
+                src="#"
+                alt="Picture of the author"
+                width={500}
+                height={500}
+              /> */}
+            </div>
       </section>
 
       {/* project lists */}
-      <section id="projects">
-        <h2>My Best Projects</h2>
-        {projects.map((project) => (
-          <ul key={project.title}>
-            <li>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-            </li>
-          </ul>
-        ))}
+      <section id="projects" className={styles.projects}>
+        <div className={styles.gridContainer}>
+        <p className={`${styles.projectsHead} ${styles.row}`}>My Projects</p>
+            <ul className={`${styles.row} ${styles.projectsUl}`}>
+              <li className={styles.projectsLi}>
+                <Image src="/nam.jpg"
+                  alt="Picture of the author"
+                  width={300}
+                  height={300}
+                  >
+                </Image>
+                <p>Project 1</p>
+                <span>Project Description</span>
+              </li>
+              <li className={styles.projectsLi}>
+                <Image src="/nam.jpg"
+                  alt="Picture of the author"
+                  width={300}
+                  height={300}
+                  >
+                </Image>
+                <p>Project 2</p>
+                <span>Project Description</span>
+              </li>
+              <li className={styles.projectsLi}>
+                <Image src="/nam.jpg"
+                  alt="Picture of the author"
+                  width={300}
+                  height={300}
+                  >
+                </Image>
+                <p>Project 3</p>
+                <span>Project Description</span>
+              </li>
+            </ul>
+          </div>
+      </section>
+
+      {/* soft and hard skills */}
+      <section id="skills" className={styles.skills}>
+        <h2>What I&apos;m Good At</h2>
+        <ul>
+            <li></li>
+        </ul>
       </section>
 
       {/* awards and contributions */}
-      <section id="awards">
+      <section id="awards" className={styles.gridContainer}>
         <h2>Award and Contributions</h2>
         <ul>
           <li>Best Web Developer 2021</li>
