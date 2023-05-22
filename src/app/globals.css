@@ -4,10 +4,13 @@
     * ? You can change them to your liking
     */
 
-    --clr-light: #BBE1FA;
-    --clr-primary: #3282B8;
-    --clr-secondary: #0F4C75;
-    --clr-dark: #1B262C;
+    --clr-1: 238, 238, 238;
+    --clr-2: 0, 173, 181;
+    --clr-3: 57, 62, 70;
+    --clr-4: 34, 40, 49;
+
+    --font-inter: 'Inter', sans-serif;
+    --font-roboto-mono: 'Roboto Mono', monospace;
   }
 
 * {
@@ -20,11 +23,33 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: rgba(var(--clr-4), 1);
 }
 
 body {
-  
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: rgb(var(--clr-4));
+  overflow-x: hidden;
 }
+
+/* body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgb(var(--clr-3)) 10%, rgb(var(--clr-4)) 25%);
+  background-size: .5rem .5rem;
+  opacity: 1;
+  pointer-events: none;
+} */
+
 
 a {
   color: inherit;
