@@ -1,4 +1,9 @@
-const page = () => {
+const page = async () => {
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('resolved');
+    }, 2000);
+  });
   return (
     <div>
       <section id="hero">
