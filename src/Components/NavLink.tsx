@@ -1,19 +1,24 @@
-import Link from "next/link"
-import styles from "@/app/Components.module.css"
+'use client'
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import styles from '@/app/page.module.css';
 
 type NavLinkProps = {
-    href: string,
-    children: React.ReactNode,
+    href: string;
+    className?: string;
+    children: React.ReactNode;
 }
 
-const NavLink = ({href, children}: NavLinkProps) => {
+const NavLink = ({ href, className = '', children }: NavLinkProps) => {
+  const pathname = usePathname();
   return (
-    <li className={styles.navlinkList}>
-        <Link href={href} className={styles.navlinkLink}>
+    <li className={`${className} ${pathname == href ? `${styles.active}` : ''}`}>
+        <Link href={href}>
             {children}
         </Link>
     </li>
-  )
+  );
 }
 
-export default NavLink
+export default NavLink;
