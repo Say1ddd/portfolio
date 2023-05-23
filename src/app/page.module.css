@@ -1,0 +1,387 @@
+/**  
+* * page.tsx
+*/
+
+.transition {
+    animation: loading-in 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes loading-in {
+    0% {
+        opacity: 0;
+        overflow: hidden;
+    }
+    50% {
+        overflow: visible;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.main {
+    height: 100vh;
+    color: rgb(var(--clr-1));
+    text-align: center;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.row {
+    grid-column: 1 / span 12;
+}
+
+.gridCols1 { grid-column: 1 / 12; }
+.gridCols2 { grid-column: 2 / 12; }
+.gridCols3 { grid-column: 3 / 12; }
+.gridCols4 { grid-column: 4 / 12; }
+.gridCols5 { grid-column: 5 / 12; }
+.gridCols6 { grid-column: 6 / 12; }
+.gridCols7 { grid-column: 7 / 12; }
+.gridCols8 { grid-column: 8 / 12; }
+.gridCols9 { grid-column: 9 / 12; }
+.gridCols10 { grid-column: 10 / 12; }
+.gridCols11 { grid-column: 11 / 12; }
+
+/**  
+* ! hero section
+*/
+
+.hero {
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: rgb(var(--clr-1));
+    padding: 0 10rem;
+}
+
+.hero p {
+    font-size: 1.5em;
+    font-weight: 200;
+    color: rgb(var(--clr-1));
+}
+
+.heroPrimary {
+    font-size: 5em;
+    font-weight: 900;
+    color: rgb(var(--clr-1));
+}
+
+.heroSecondary {
+    font-size: 2.5em;
+    font-weight: 500;
+    font-style: italic;
+    color: rgb(var(--clr-2));
+}
+
+/* @keyframes changeContent {
+    0% {
+        content: "for your BUSINESS";
+    }
+    33% {
+        content: "for your OWN";
+    }
+
+    66% {
+        content: "for YOU";
+    }
+    100% {
+        content: "for your BUSINESS";
+    }
+} */
+
+/**  
+* ! this is NavLink.tsx component
+* * navContainer li, navContainer li > *
+*/
+
+.navContainer {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.navContainer ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.navContainer li {
+    padding: .5rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+}
+
+.navContainer:hover li {
+    transform: translateX(0%);
+}
+
+.navContainer li:hover {
+    color: rgba(255, 255, 255, .80);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+/**  
+* * end of NavLink.tsx component
+*/
+
+/**  
+* ! projects section
+*/
+
+.projects {
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: rgb(var(--clr-1));
+    padding: 0 10rem;
+}
+
+.projectsHead {
+    font-size: 2rem;
+    font-weight: 300;
+    color: rgb(var(--clr-1));
+    margin-bottom: 5rem;
+}
+
+.projectsUl {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 2.5rem;
+    list-style: none;
+}
+
+.projectsLi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .25);
+    border-radius: .1rem;
+}
+
+.projectsLi p {
+    color: rgb(var(--clr-1));
+    margin-top: 1rem;
+
+}
+
+.projectsLi span {
+    color: rgb(var(--clr-1));
+    padding: 1rem;
+}
+
+.projectsButton {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(var(--clr-2));
+    color: rgb(var(--clr-1));
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: .1rem;
+    cursor: pointer;
+    transition-duration: .25s;
+
+}
+
+/**  
+* ! skills section
+*/
+
+.skills {
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.skillsHead {
+    font-size: 5em;
+    font-weight: 900;
+    background: linear-gradient(to right, rgb(var(--clr-1)), rgb(var(--clr-2)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.skills ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
+}
+
+/**
+* ! this is SkillsCard.tsx component
+* * skillsGrid li, skillsGrid li > *
+*/
+
+.skillsGrid li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(15, 15, 15);
+    border-radius: .1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    height: 10rem;
+    width: 10rem;
+    border: rgba(var(--clr-2), .75) solid .1rem;
+    transition-duration: .25s;
+}
+
+.skillsGrid li:hover {
+    border: rgb(var(--clr-2)) solid .1rem;
+    background: rgba(0, 0, 0, .25);
+}
+
+.skillsGrid li:hover span {
+    color: rgb(var(--clr-2));
+}
+
+.skillsGrid li span {
+    color: rgb(var(--clr-1));
+    font-size: 4em;
+    display: flex;
+    margin-bottom: .1rem;
+    padding: 0;
+    transition-duration: .25s;
+}
+
+.skillsGrid li p {
+    color: rgb(var(--clr-1));
+    font-size: 1em;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+/**  
+* * end of SkillsGrid.tsx component
+*/
+
+/**
+* ! contacts section
+*/
+
+.contacts {
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    color: rgb(var(--clr-1));
+}
+
+.contactsHead {
+    font-size: 5em;
+    font-weight: 900;
+    background: linear-gradient(to right, rgb(var(--clr-1)), rgb(var(--clr-2)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.contactsLi {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactsLi span {
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 1rem;
+    background-color: black;
+}
+
+.contactsLi span:nth-child(odd)::before {
+    content: 'number ';
+}
+
+.contactsLi span:nth-child(even)::before {
+    content: 'email ';
+}
+
+/**  
+* ! footer only
+*/
+
+.contacts footer {
+    position: static;
+    width: 100vw;
+    background-color: rgba(var(--clr-3), .5);
+    color: rgb(var(--clr-1));
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 1rem;
+    margin-top: 5rem;
+    padding: 1rem 0;
+    list-style: none;
+}
+
+.footerLogo {
+    outline: red solid .1rem;
+}
+
+.footerNav {
+    outline: green solid .1rem;
+}
+
+.footerNav ul {
+    text-transform: capitalize;
+    text-align: start;
+    font-weight: 500;
+}
+
+.footerNav li {
+    list-style: none;
+    margin: 0 .5rem;
+}
+
+.footerSocial {
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    outline: blue solid .1rem;
+}
+
+.footerSocial ul {
+    list-style: none;
+}
+
+.footerSocial li {
+    display: inline-block;
+    margin: 0 .5rem;
+}
