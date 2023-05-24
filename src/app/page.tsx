@@ -5,19 +5,35 @@ import styles from '@/app/page.module.css';
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import Link from 'next/link';
 import { FaHtml5 } from 'react-icons/fa';
-import { FaCss3Alt, FaSquareJs, FaLaravel, FaReact } from 'react-icons/fa6';
-import { SiNextdotjs, SiPhp, SiTailwindcss, SiTypescript } from 'react-icons/si';
+import { FaCss3Alt, FaJs, FaLaravel, FaReact } from 'react-icons/fa6';
+import { SiAdobephotoshop, SiFigma, SiNextdotjs, SiPhp, SiTailwindcss, SiTypescript } from 'react-icons/si';
+import { BsGit } from 'react-icons/bs';
 
-const Skills = [
+const SkillsDev = [
   { name: 'HTML', icon: <FaHtml5 /> },
   { name: 'CSS', icon: <FaCss3Alt /> },
-  { name: 'Javascript', icon: <FaSquareJs /> },
+  { name: 'Javascript', icon: <FaJs /> },
   { name: 'Typescript', icon: <SiTypescript /> },
   { name: 'React', icon: <FaReact /> },
   { name: 'TailwindCSS', icon: <SiTailwindcss /> },
   { name: 'NextJS', icon: <SiNextdotjs /> },
   { name: 'PHP', icon: <SiPhp /> },
   { name: 'Laravel', icon: <FaLaravel /> },
+];
+
+const SkillsTool = [
+  {
+    name: 'Figma',
+    icon: <SiFigma />,
+    desc: "I started using Figma by creating SVG assets and my own logo design."},
+  {
+    name: 'Adobe Photoshop',
+    icon: <SiAdobephotoshop />,
+    desc: "I Started using Adobe Photoshop by modify and creating one of my favorite game's assets."},
+  {
+    name: 'Git',
+    icon: <BsGit />,
+    desc: "I started using Git out of curiosity about managing projects with a team."},
 ];
 
 export default async function Home() {
@@ -48,8 +64,8 @@ export default async function Home() {
         {/* hero */}
         <section id="hero" className={styles.hero}>
             <p>Sajid Muhammad Ikhlas</p>
-            <span className={styles.heroPrimary}>CREATING AMAZING WEBSITES</span>
-            <span className={styles.heroSecondary}>Full-stack developer</span>
+            <span className={styles.heroTitle}>Creating Amazing Websites</span>
+            <span className={styles.heroSub}>Full-stack developer</span>
               <div>
                 {/* <Image
                   src="#"
@@ -63,7 +79,7 @@ export default async function Home() {
         {/* project lists */}
         <section id="projects" className={styles.projects}>
           <div className={styles.gridContainer}>
-          <p className={`${styles.projectsHead} ${styles.row}`}>My Projects</p>
+          <span className={`${styles.projectsTitle} ${styles.row}`}>What I&apos;ve Created</span>
               <ul className={`${styles.row} ${styles.projectsUl}`}>
                 <li className={styles.projectsLi}>
                   <Image src="/nam.jpg"
@@ -106,12 +122,26 @@ export default async function Home() {
 
         {/* soft and hard skills */}
         <section id="skills" className={styles.skills}>
-          <span className={styles.skillsHead}>What I&apos;m Good At</span>
-          <span>Language, library, and frameworks</span>
-          <div className={styles.skillsGrid}>
+          <span className={styles.skillsTitle}>What I&apos;m Good At</span>
+          <span className={styles.skillsSub}>Language, library, and frameworks</span>
+          <div className={styles.skillsDev}>
             <ul>
-              {Skills.map((skill) => (
-                <SkillsCard key={skill.name} name={skill.name} icon={skill.icon} />
+              {SkillsDev.map((skillDev) => (
+                <SkillsCard key={skillDev.name} name={skillDev.name} icon={skillDev.icon} />
+              ))}
+            </ul>
+          </div>
+          <span className={styles.skillsSub}>Tool and softwares</span>
+          <div className={styles.skillsTool}>
+            <ul>
+              {SkillsTool.map((skillTool) => (
+                  <li key={skillTool.name}>
+                    <span>{skillTool.icon}</span>
+                  <div className={styles.skillsText}>
+                    <p>{skillTool.name}</p>
+                    <p>{skillTool.desc}</p>
+                  </div>
+              </li>
               ))}
             </ul>
           </div>
@@ -119,7 +149,7 @@ export default async function Home() {
 
         {/* contact me */}
         <section id="contacts" className={styles.contacts}>
-          <span className={styles.contactsHead}>Let&apos;s connect!</span>
+          <span className={styles.contactsTitle}>Let&apos;s connect!</span>
             <div className={styles.contactsLi}>
               <span>+62-895-4111-38292</span>
               <span>sajidmuhammadikhlas@gmail.com</span>
