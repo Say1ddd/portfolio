@@ -59,7 +59,6 @@
 }
 
 .nav ul {
-    outline: red solid .1rem;
     display: flex;
     flex-direction: column;
     font-weight: 500;
@@ -99,6 +98,35 @@
 .logoFooter span::after {
     content: "IKHLAS";
     display: block;
+}
+
+/**  
+* * loading.tsx
+*/
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 5em;
+    color: rgb(var(--clr-1));
+    padding: 0 10rem;
+}
+
+.loading span {
+    display: inline-block;
+    animation: rotate 1s linear infinite;
+    transition: ease-in-out 0.3s;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /**  
@@ -454,14 +482,6 @@
     list-style: none;
 }
 
-.footerLogo {
-    outline: red solid .1rem;
-}
-
-.footerNav {
-    outline: green solid .1rem;
-}
-
 .footerNav ul {
     text-transform: capitalize;
     text-align: start;
@@ -477,7 +497,6 @@
     text-align: end;
     display: flex;
     flex-direction: column;
-    outline: blue solid .1rem;
 }
 
 .footerSocial ul {
