@@ -1,4 +1,107 @@
 /**  
+* ! logo only
+* ? .logo .logoFooter
+*/
+
+.logo {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    animation: logo 2s ease;
+}
+
+.logo span {
+    color: rgb(var(--clr-1));
+    display: inline-block;
+    font-size: 3.5em;
+    text-decoration: none;
+    font-family: var(--font-roboto-mono);
+    transition-duration: .25s;
+    font-weight: 900;
+}
+
+.logo:hover span {
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(var(--clr-1));
+    text-stroke: 1px rgb(var(--clr-1));
+}
+
+.logo span::before {
+    content: "SAJID-";
+    display: inline;
+}
+
+.logo span::after {
+    content: "IKHLAS";
+    display: block;
+}
+
+@keyframes logo {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/** 
+* ! HeroNav.tsx
+*/
+
+.nav {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.nav ul {
+    outline: red solid .1rem;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    text-align: left;
+    text-transform: uppercase;
+    list-style: none;
+    padding: 7.5rem 0;
+}
+
+.active {
+    color: rgba(255, 255, 255, .80);
+}
+
+/**
+* ! logoFooter
+*/
+
+.logoFooter {
+    display: inline-block;
+    bottom: 1rem;
+    left: 1rem;
+}
+
+.logoFooter span {
+    color: rgb(var(--clr-1));
+    font-size: 3.5em;
+    font-weight: 900;
+    text-decoration: none;
+    font-family: var(--font-roboto-mono);
+}
+
+.logoFooter span::before {
+    content: "SAJID-";
+    display: inline;
+}
+
+.logoFooter span::after {
+    content: "IKHLAS";
+    display: block;
+}
+
+/**  
 * * page.tsx
 */
 
