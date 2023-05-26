@@ -367,7 +367,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 1rem 0 2.5rem 0;
+    padding: 0 0 2.5rem 0;
 }
 
 .skillsTitle {
@@ -468,7 +468,7 @@
     border-radius: .1rem;
     border-radius: 1rem;
     width: 18rem;
-    padding: 1rem .5rem;
+    padding: 1rem;
     border: rgba(var(--clr-2), .75) solid .1rem;
     transition: background-color 0.3s;
 }
@@ -480,15 +480,15 @@
 }
 
 .skillsTool li span {
+    display: flex;
     color: rgb(var(--clr-1));
     font-size: 4em;
-    display: flex;
-    margin: 0 .5rem .1rem 0;
+    margin: 0 .5rem 0 0;
     padding: 0;
     transition: color 0.3s, text-shadow 0.3s;
 }
 
-.skillsTool li:nth-child(2):hover span { color: #001E36; background: #31A8FF; background-blend-mode: color; }
+.skillsTool li:nth-child(2):hover span { color: #001E36; background-color: #31A8FF; border-radius: 100%; }
 .skillsTool li:nth-child(3):hover span { color: #F1502F; }
 
 .skillsText {
