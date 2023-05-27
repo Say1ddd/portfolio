@@ -133,7 +133,6 @@ export default async function Home() {
 
         {/* contact me */}
         <section id="contacts" className={styles.contacts}>
-          <span className={styles.Title}>Let&apos;s connect!</span>
             <div className={styles.contactsList}>
               <span>+62-895-4111-38292</span>
               <span>sajidmuhammadikhlas@gmail.com</span>
