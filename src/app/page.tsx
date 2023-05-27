@@ -64,8 +64,8 @@ export default async function Home() {
         {/* hero */}
         <section id="hero" className={styles.hero}>
             <p>Sajid Muhammad Ikhlas</p>
-            <span className={styles.heroTitle}>Creating Amazing Websites</span>
-            <span className={styles.heroSub}>Full-stack developer</span>
+            <span className={styles.Title}>Creating Amazing Websites</span>
+            <span className={styles.Sub}>Full-stack developer</span>
               <div>
                 {/* <Image
                   src="#"
@@ -78,41 +78,25 @@ export default async function Home() {
 
         {/* project lists */}
         <section id="projects" className={styles.projects}>
-          <div className={styles.gridContainer}>
-          <span className={`${styles.projectsTitle} ${styles.row}`}>What I&apos;ve Created</span>
-              <ul className={`${styles.row} ${styles.projectsUl}`}>
-                <li className={styles.projectsLi}>
-                  <Image src="/nam.jpg"
-                    alt="Picture of the author"
-                    width={300}
-                    height={300}
-                    >
-                  </Image>
+          <span className={styles.Title}>What I&apos;ve Created</span>
+          <span className={styles.Sub}>For The Past Years</span>
+              <ul>
+                <li>
+
                   <p>Project 1</p>
                   <span>Project Description</span>
                 </li>
-                <li className={styles.projectsLi}>
-                  <Image src="/nam.jpg"
-                    alt="Picture of the author"
-                    width={300}
-                    height={300}
-                    >
-                  </Image>
+                <li>
+
                   <p>Project 2</p>
                   <span>Project Description</span>
                 </li>
-                <li className={styles.projectsLi}>
-                  <Image src="/nam.jpg"
-                    alt="Picture of the author"
-                    width={300}
-                    height={300}
-                    >
-                  </Image>
+                <li>
+
                   <p>Project 3</p>
                   <span>Project Description</span>
                 </li>
               </ul>
-            </div>
             <div>
               <Link href="/projects">
                 <button className={styles.projectsButton}>View All Projects</button>
@@ -122,8 +106,8 @@ export default async function Home() {
 
         {/* soft and hard skills */}
         <section id="skills" className={styles.skills}>
-          <span className={styles.skillsTitle}>What I&apos;m Good At</span>
-          <span className={styles.skillsSub}>Language, library, and frameworks</span>
+          <span className={styles.Title}>What I&apos;m Good At</span>
+          <span className={styles.Sub}>Language, library, and frameworks</span>
           <div className={styles.skillsDev}>
             <ul>
               {SkillsDev.map((skillDev) => (
@@ -131,7 +115,7 @@ export default async function Home() {
               ))}
             </ul>
           </div>
-          <span className={styles.skillsSub}>Tool and softwares</span>
+          <span className={styles.Sub}>Tool and softwares</span>
           <div className={styles.skillsTool}>
             <ul>
               {SkillsTool.map((skillTool) => (
@@ -149,8 +133,8 @@ export default async function Home() {
 
         {/* contact me */}
         <section id="contacts" className={styles.contacts}>
-          <span className={styles.contactsTitle}>Let&apos;s connect!</span>
-            <div className={styles.contactsLi}>
+          <span className={styles.Title}>Let&apos;s connect!</span>
+            <div className={styles.contactsList}>
               <span>+62-895-4111-38292</span>
               <span>sajidmuhammadikhlas@gmail.com</span>
             </div>

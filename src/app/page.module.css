@@ -179,6 +179,25 @@
 .gridCols10 { grid-column: 10 / 12; }
 .gridCols11 { grid-column: 11 / 12; }
 
+.Title {
+    font-size: 5em;
+    font-weight: 900;
+    background: linear-gradient(to right, rgb(var(--clr-1)), rgb(var(--clr-2)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.Sub {
+    font-size: 2em;
+    font-weight: 500;
+    font-style: italic;
+    background: linear-gradient(to right, rgba(var(--clr-2)), rgba(var(--clr-2), .75));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 /**  
 * ! hero section
 */
@@ -198,23 +217,6 @@
     font-size: 1.5em;
     font-weight: 200;
     color: rgb(var(--clr-1));
-}
-
-.heroTitle {
-    font-size: 5em;
-    font-weight: 900;
-    color: transparent;
-    text-transform: uppercase;
-    background: linear-gradient(to right, rgb(var(--clr-1)), rgb(var(--clr-2)));
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-
-.heroSub {
-    font-size: 2.5em;
-    font-weight: 500;
-    font-style: italic;
-    color: rgb(var(--clr-2));
 }
 
 /* @keyframes changeContent {
@@ -289,34 +291,16 @@
 */
 
 .projects {
-    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    scroll-snap-align: start;
     height: 100vh;
     color: rgb(var(--clr-1));
-    padding: 0 10rem;
 }
 
-.projectsTitle {
-    font-size: 5em;
-    font-weight: 900;
-    background: linear-gradient(to right, rgb(var(--clr-1)), rgb(var(--clr-2)));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin-bottom: 5rem;
-}
-
-.projectsTitle::after {
-    font-size: .5em;
-    font-weight: 300;
-    content: "For the past years";
-    color: rgb(var(--clr-2));
-}
-
-.projectsUl {
+.projects ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -324,7 +308,7 @@
     list-style: none;
 }
 
-.projectsLi {
+.projects li {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -333,13 +317,13 @@
     border-radius: .1rem;
 }
 
-.projectsLi p {
+.projects li p {
     color: rgb(var(--clr-1));
     margin-top: 1rem;
 
 }
 
-.projectsLi span {
+.projects li span {
     color: rgb(var(--clr-1));
     padding: 1rem;
 }
@@ -368,25 +352,6 @@
     justify-content: flex-start;
     align-items: center;
     padding: 0 0 2.5rem 0;
-}
-
-.skillsTitle {
-    font-size: 5em;
-    font-weight: 900;
-    background: linear-gradient(to right, rgb(var(--clr-1)), rgb(var(--clr-2)));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.skillsSub {
-    font-size: 2em;
-    font-weight: 500;
-    font-style: italic;
-    background: linear-gradient(to right, rgba(var(--clr-2)), rgba(var(--clr-2), .75));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
 }
 
 /**
@@ -531,33 +496,24 @@
     color: rgb(var(--clr-1));
 }
 
-.contactsTitle {
-    font-size: 5em;
-    font-weight: 900;
-    background: linear-gradient(to right, rgb(var(--clr-1)), rgb(var(--clr-2)));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.contactsLi {
+.contactsList {
     text-align: left;
     display: flex;
     flex-direction: column;
 }
 
-.contactsLi span {
+.contactsList span {
     font-size: 1.5em;
     font-weight: 500;
     padding: 1rem;
     background-color: black;
 }
 
-.contactsLi span:nth-child(odd)::before {
+.contactsList span:nth-child(odd)::before {
     content: 'number ';
 }
 
-.contactsLi span:nth-child(even)::before {
+.contactsList span:nth-child(even)::before {
     content: 'email ';
 }
 
