@@ -1,13 +1,15 @@
 import NavLink from '@/Components/NavLink';
-import SkillsCard from '@/Components/SkillsCard';
+import ListComponent from '@/Components/ListComponent';
 import Image from 'next/image';
 import styles from '@/app/page.module.css';
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import Link from 'next/link';
 import { FaHtml5 } from 'react-icons/fa';
-import { FaCss3Alt, FaJs, FaLaravel, FaReact } from 'react-icons/fa6';
+import { FaCss3Alt, FaFacebook, FaInstagram, FaJs, FaLaravel, FaLinkedin, FaReact } from 'react-icons/fa6';
 import { SiAdobephotoshop, SiFigma, SiNextdotjs, SiPhp, SiTailwindcss, SiTypescript } from 'react-icons/si';
 import { BsGit } from 'react-icons/bs';
+import PrimaryButton from '@/Components/PrimaryButton';
+import { MdCall, MdMail } from 'react-icons/md';
 
 const SkillsDev = [
   { name: 'HTML', icon: <FaHtml5 /> },
@@ -23,15 +25,15 @@ const SkillsDev = [
 
 const SkillsTool = [
   {
-    name: 'Figma',
+    label: 'Figma',
     icon: <SiFigma />,
     desc: "I started using Figma by creating SVG assets and my own logo design."},
   {
-    name: 'Adobe Photoshop',
+    label: 'Adobe Photoshop',
     icon: <SiAdobephotoshop />,
     desc: "I Started using Adobe Photoshop by modify and creating one of my favorite game's assets."},
   {
-    name: 'Git',
+    label: 'Git',
     icon: <BsGit />,
     desc: "I started using Git out of curiosity about managing projects with a team."},
 ];
@@ -40,89 +42,111 @@ export default async function Home() {
   return (
     <main className={styles.transition}>
       <div className={styles.main}>
-        <ApplicationLogo className={styles.logo} />
-        <div className={styles.nav}>
-          <ul>
-            <NavLink href="/">home</NavLink>
-            <NavLink href="/#projects">projects</NavLink>
-            <NavLink href="/#skills">my expertises</NavLink>
-            <NavLink href="/#contacts">contact</NavLink>
-          </ul>
+        <div className={styles.fixed}>
+          <ApplicationLogo className={styles.logo} />
+          <div className={styles.nav}>
+            <ul>
+              <NavLink href="/">home</NavLink>
+              <NavLink href="/#projects">projects</NavLink>
+              <NavLink href="/#skills">my expertises</NavLink>
+              <NavLink href="/#contact">contact</NavLink>
+            </ul>
+          </div>
         </div>
-        <div className={styles.navContainer}>
-        <div className={styles.navIcon}>
+        {/* <div className={styles.navContainer}>
+        <div className={styles.navIcon}> */}
           {/* icon */}
-        </div>
+        {/* </div>
             <ul>
               <NavLink href="/">home</NavLink>
               <NavLink href="/about">about me</NavLink>
               <NavLink href="/projects">my projects</NavLink>
               <NavLink href="/contact">contact me</NavLink>
             </ul>
-          </div>
+          </div> */}
 
         {/* hero */}
-        <section id="hero" className={styles.hero}>
-            <p>Sajid Muhammad Ikhlas</p>
-            <span className={styles.Title}>Creating Amazing Websites</span>
-            <span className={styles.Sub}>Full-stack developer</span>
-              <div>
+        <section id="hero" className={`${styles.hero} ${styles.container}`}>
+          <div className={styles.row}>
+            <p className={styles.gridCols12}>Sajid Muhammad Ikhlas</p>
+            <span className={`${styles.Title} ${styles.gridCols12}`}>Creating Amazing Websites</span>
+            <span className={`${styles.Sub} ${styles.gridCols12}`}>Full-Stack Web Developer</span>
                 {/* <Image
                   src="#"
                   alt="Picture of the author"
                   width={500}
                   height={500}
                 /> */}
-              </div>
+            </div>
         </section>
 
         {/* project lists */}
-        <section id="projects" className={styles.projects}>
-          <span className={styles.Title}>What I&apos;ve Created</span>
-          <span className={styles.Sub}>For The Past Years</span>
-              <ul>
-                <li>
-
-                  <p>Project 1</p>
-                  <span>Project Description</span>
-                </li>
-                <li>
-
-                  <p>Project 2</p>
-                  <span>Project Description</span>
-                </li>
-                <li>
-
-                  <p>Project 3</p>
-                  <span>Project Description</span>
-                </li>
+        <section id="projects" className={`${styles.projects} ${styles.container}`}>
+          <div className={styles.row}>
+            <span className={`${styles.Title} ${styles.gridCols12}`}>What I&apos;ve Created</span>
+            <span className={`${styles.Sub} ${styles.gridCols12}`}>In the Past Years</span>
+          </div>
+          <div className={styles.row}>
+              <ul className={styles.gridCols12}>
+                <ListComponent
+                  icon={<Image src="/atsukogrin.png"
+                  alt="test"
+                  width={150}
+                  height={100}></Image>}
+                  label="Project1"
+                />
+                <ListComponent
+                  icon={<Image src="/atsukogrin.png"
+                  alt="test"
+                  width={150}
+                  height={100}></Image>}
+                  label="Project2"
+                />
+                <ListComponent
+                  icon={<Image src="/atsukogrin.png"
+                  alt="test"
+                  width={150}
+                  height={100}></Image>}
+                  label="Project3"
+                />
               </ul>
-            <div>
-              <Link href="/projects">
-                <button className={styles.projectsButton}>View All Projects</button>
+            </div>
+            <div className={styles.row}>
+              <Link href="/projects" className={styles.gridCols12}>
+                  <PrimaryButton>
+                    View More
+                  </PrimaryButton>
               </Link>
             </div>
         </section>
 
         {/* soft and hard skills */}
-        <section id="skills" className={styles.skills}>
-          <span className={styles.Title}>What I&apos;m Good At</span>
-          <span className={styles.Sub}>Language, library, and frameworks</span>
-          <div className={styles.skillsDev}>
-            <ul>
-              {SkillsDev.map((skillDev) => (
-                <SkillsCard key={skillDev.name} name={skillDev.name} icon={skillDev.icon} />
+        <section id="skills" className={`${styles.skills} ${styles.container}`}>
+          <div className={styles.row}>
+            <span className={`${styles.Title} ${styles.gridCols12}`}>What I&apos;m Good At</span>
+            <span className={`${styles.Sub} ${styles.gridCols12}`}>Language, Library, and Frameworks</span>
+          </div>
+          <div className={`${styles.skillsDev} ${styles.row}`}>
+            <ul className={styles.gridCols12}>
+              {SkillsDev.map((skillDev, index) => (
+                <ListComponent
+                key={index}
+                label={skillDev.name}
+                icon={skillDev.icon}
+                />
               ))}
             </ul>
           </div>
-          <span className={styles.Sub}>Tool and softwares</span>
-          <div className={styles.skillsTool}>
-            <ul>
-              {SkillsTool.map((skillTool) => (
-                  <li key={skillTool.name}>
+          <div className={styles.row}>
+            <span className={`${styles.Sub} ${styles.gridCols12}`}>Tool and Softwares</span>
+          </div>
+          <div className={`${styles.skillsTool} ${styles.row}`}>
+            <ul className={styles.gridCols12}>
+              {SkillsTool.map((skillTool, index) => (
+                  <li key={index}>
                     <span>{skillTool.icon}</span>
                   <div className={styles.skillsText}>
-                    <p>{skillTool.name}</p>
+                    <p>{skillTool.label}</p>
                     <p>{skillTool.desc}</p>
                   </div>
               </li>
@@ -132,40 +156,63 @@ export default async function Home() {
         </section>
 
         {/* contact me */}
-        <section id="contacts" className={styles.contacts}>
-            <div className={styles.contactsList}>
-              <span>+62-895-4111-38292</span>
-              <span>sajidmuhammadikhlas@gmail.com</span>
-            </div>
-            <div>
+        <section id="contact" className={`${styles.contacts} ${styles.container}`}>
+          <div className={styles.row}>
+            <span className={`${styles.Title} ${styles.gridCols12}`}>Get in Touch</span>
+            <span className={`${styles.Sub} ${styles.gridCols12}`}>Let&apos;s Work Together</span>
+            <span></span>
+          </div>
+            {/* <div className={`${styles.contactsList} ${styles.row}`}>
+              <span className={styles.gridCols12}><MdCall /></span>
+              <span className={styles.gridCols12}><MdMail /></span>
+            </div> */}
             {/* footer */}
-              <footer>
+              <footer className={styles.container}>
                 {/* footer logo */}
                 <div className={styles.footerLogo}>
                 <ApplicationLogo className={styles.logoFooter}/>
                 </div>
 
                 {/* footer nav */}
-                <div className={styles.footerNav}>
-                  <ul>
-                    <li>home</li>
-                    <li>projects</li>
-                    <li>about me</li>
+                <div className={`${styles.footerNav} ${styles.row}`}>
+                  <span className={styles.gridCols12}>Navigation</span>
+                  <ul className={styles.gridCols12}>
+                  <NavLink href="/">Back to Top</NavLink>
+                  <NavLink href="/#projects">Projects</NavLink>
+                  <NavLink href="/#skills">Skills</NavLink>
+                  <NavLink href="/#contact">Contact</NavLink>
                   </ul>
                 </div>
 
                 {/* footer social */}
-                <div className={styles.footerSocial}>
-                  <span>sajidmuhammadikhlas@gmail.com</span>
-                  <span>+62-895-4111-38292</span>
-                  <ul>
-                    <li>facebook</li>
-                    <li>instagram</li>
-                    <li>linkedin</li>
-                  </ul>
-                </div>
+                <ul className={`${styles.footerSocial} ${styles.row}`}>
+                  <Link href='mailto:sajidmuhammadikhlas@gmail.com' target='_blank'>
+                  <ListComponent
+                    className={styles.gridCols12}
+                    label='sajidmuhammadikhlas@gmail.com'
+                  />
+                  </Link>
+                  <Link href='https://wa.me/+62895411138292' target='_blank'>
+                  <ListComponent
+                    className={styles.gridCols12}
+                    label='+62 895 4111 38292'
+                  />
+                  </Link>
+                  <div className={styles.row}>
+                    <div className={styles.gridCols12}>
+                    <Link href='https://www.linkedin.com/in/sajid-muhammad-ikhlas/' target='_blank'>
+                      <ListComponent icon={<FaLinkedin />} />
+                    </Link>
+                    <Link href='https://web.facebook.com/sajid.muhammad.12764' target='_blank'>
+                      <ListComponent icon={<FaFacebook />} />
+                    </Link>
+                    <Link href='https://www.instagram.com/say1ddd/' target='_blank'>
+                      <ListComponent icon={<FaInstagram />} />
+                    </Link>
+                    </div>
+                  </div>
+                </ul>
               </footer>
-            </div>
         </section>
       </div>
     </main>
