@@ -29,7 +29,6 @@ body {
 body {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  position: relative;
   margin: 0;
   padding: 0;
   min-height: 100vh;
