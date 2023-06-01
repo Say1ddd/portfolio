@@ -1,12 +1,21 @@
 /**  
-* ! logo only
+* ! logo
 * ? .logo .logoFooter
 */
 
-.logo {
+.fixed {
     position: fixed;
-    top: 1rem;
-    left: 1rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0 0 1rem;
+    z-index: 1000;
+}
+
+.logo {
     animation: logo 2s ease;
 }
 
@@ -14,7 +23,6 @@
     color: rgb(var(--clr-1));
     display: inline-block;
     font-size: 3.5em;
-    text-decoration: none;
     font-family: var(--font-roboto-mono);
     transition-duration: .25s;
     font-weight: 900;
@@ -52,20 +60,26 @@
 */
 
 .nav {
-    position: fixed;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+    padding: 1rem 0;
+    text-align: right;
 }
 
 .nav ul {
-    display: flex;
-    flex-direction: column;
     font-weight: 500;
-    text-align: left;
     text-transform: uppercase;
+}
+
+.nav li {
+    cursor: pointer;
+    padding: .25rem 1rem;
     list-style: none;
-    padding: 7.5rem 0;
+    font-size: 1rem;
+    transition: transform 0.5s ease;
+}
+
+
+.nav li:hover {
+    transform: translateX(-1rem);
 }
 
 .active {
@@ -156,28 +170,34 @@
     height: 100vh;
     color: rgb(var(--clr-1));
     text-align: center;
-}
-
-.gridContainer {
-    display: grid;
     grid-template-columns: repeat(12, 1fr);
 }
 
-.row {
-    grid-column: 1 / span 12;
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
-.gridCols1 { grid-column: 1 / 12; }
-.gridCols2 { grid-column: 2 / 12; }
-.gridCols3 { grid-column: 3 / 12; }
-.gridCols4 { grid-column: 4 / 12; }
-.gridCols5 { grid-column: 5 / 12; }
-.gridCols6 { grid-column: 6 / 12; }
-.gridCols7 { grid-column: 7 / 12; }
-.gridCols8 { grid-column: 8 / 12; }
-.gridCols9 { grid-column: 9 / 12; }
-.gridCols10 { grid-column: 10 / 12; }
-.gridCols11 { grid-column: 11 / 12; }
+.row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+}
+
+.gridCols1 { grid-column: span 1; }
+.gridCols2 { grid-column: span 2; }
+.gridCols3 { grid-column: span 3; }
+.gridCols4 { grid-column: span 4; }
+.gridCols5 { grid-column: span 5; }
+.gridCols6 { grid-column: span 6; }
+.gridCols7 { grid-column: span 7; }
+.gridCols8 { grid-column: span 8; }
+.gridCols9 { grid-column: span 9; }
+.gridCols10 { grid-column: span 10; }
+.gridCols11 { grid-column: span 11; }
+.gridCols12 { grid-column: span 12;}
 
 .Title {
     font-size: 5em;
@@ -204,13 +224,9 @@
 
 .hero {
     scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
     color: rgb(var(--clr-1));
-    padding: 0 10rem;
+    padding: 4rem 2rem;
 }
 
 .hero p {
@@ -291,21 +307,18 @@
 */
 
 .projects {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     scroll-snap-align: start;
     height: 100vh;
     color: rgb(var(--clr-1));
+    padding: 4rem 2rem;
 }
 
 .projects ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 2.5rem;
     list-style: none;
+    padding: 0;
 }
 
 .projects li {
@@ -338,7 +351,6 @@
     border-radius: .1rem;
     cursor: pointer;
     transition-duration: .25s;
-
 }
 
 /**  
@@ -346,17 +358,15 @@
 */
 
 .skills {
-    height: 100vh;
-    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    padding: 0 0 2.5rem 0;
+    scroll-snap-align: start;
+    padding: 4rem 2rem;
 }
 
 /**
-* ! this is SkillsCard.tsx component
+* ! this is ListComponent.tsx component
 * * skillsDev li, skillsDev li > *
 * * dev
 */
@@ -364,8 +374,9 @@
 .skillsDev ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: .5rem;
-    margin: 1rem 0 2.5rem 0;
+    grid-gap: .5rem;
+    grid-auto-rows: 1fr;
+    margin: 1rem auto;
 }
 
 .skillsDev li {
@@ -374,13 +385,13 @@
     align-items: center;
     justify-content: center;
     background: rgb(15, 15, 15);
-    border-radius: .1rem;
     border-radius: 1rem;
-    height: 10rem;
-    width: 10rem;
     padding: 1rem;
     border: rgba(var(--clr-2), .75) solid .1rem;
     transition: background-color 0.3s;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
 }
 
 .skillsDev li:hover {
@@ -448,7 +459,7 @@
 .skillsTool li span {
     display: flex;
     color: rgb(var(--clr-1));
-    font-size: 4em;
+    font-size: 2em;
     margin: 0 .5rem 0 0;
     padding: 0;
     transition: color 0.3s, text-shadow 0.3s;
@@ -480,7 +491,7 @@
 }
 
 /**  
-* * end of SkillsCard.tsx component
+* * end of ListComponent.tsx component
 */
 
 /**
@@ -538,7 +549,6 @@
 }
 
 .footerNav ul {
-    text-transform: capitalize;
     text-align: start;
     font-weight: 500;
 }
@@ -561,4 +571,21 @@
 .footerSocial li {
     display: inline-block;
     margin: 0 .5rem;
+}
+
+/**  
+* ! components only
+*/
+
+.primaryButton {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(var(--clr-2));
+    color: rgb(var(--clr-1));
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition-duration: .25s;
+    font-size: 1em;
 }
