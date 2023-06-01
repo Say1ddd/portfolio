@@ -19,14 +19,14 @@ const projects = [
     src: '/portfolio.png'
   },
   { 
-    label: 'Flot',
-    desc: 'An E-commerce website created with Laravel, ReactJS, and TailwindCSS',
-    src: '/flot.png'
+    label: 'Moovie',
+    desc: 'A movie synopsis management website created with Laravel, ReactJS, and TailwindCSS',
+    src: '/moovie.png'
   },
   { 
-    label: "Too Do",
-    desc: 'A simple todo app created with Django, ReactJS, and TailwindCSS',
-    src: '/toodo.png'
+    label: "KANGTEK",
+    desc: 'A IoT platform website created with Laravel, ReactJS, and TailwindCSS',
+    src: '/kangtek.png'
   },
 ];
 
