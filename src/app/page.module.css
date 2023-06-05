@@ -94,16 +94,22 @@
 
 .loading span {
     display: inline-block;
-    animation: rotate 1s linear infinite;
+    animation: sidebyside 1s ease-in-out infinite;
     transition: ease-in-out 0.3s;
 }
 
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
+@keyframes sidebyside {
+    25% {
+        transform: translateX(25%);
     }
-    to {
-        transform: rotate(360deg);
+    50% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(0%);
     }
 }
 
@@ -112,7 +118,7 @@
 */
 
 .transition {
-    animation: loading-in 1s;
+    animation: loading-in 1.5s;
     animation-fill-mode: forwards;
     opacity: 0;
 }

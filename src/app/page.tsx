@@ -94,6 +94,7 @@ export default function Home() {
           <section id="hero" className={styles.hero}>
             <div className={styles.heroImage}>
               <Image
+                  quality={50}
                   src='/author.png'
                   alt='Author'
                   width={100}
@@ -121,7 +122,7 @@ export default function Home() {
                           alt={project.label}
                           width={300}
                           height={0}
-                          style={{height: '100%', width: 'auto'}}
+                          style={{height: '100%', width: '100%'}}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>
