@@ -2,19 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
-export const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-})
-export const roboto_mono = Roboto_Mono({
-  subsets: ['latin'],
-  display: 'swap',
-})
-
-export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Sajid Ikhlas",
-};
+const inter = Inter({ subsets: ["latin"] });
+export const roboto_mono = Roboto_Mono({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
@@ -23,7 +12,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
