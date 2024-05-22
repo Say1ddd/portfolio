@@ -3,13 +3,13 @@ import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
-export const roboto_mono = Roboto_Mono({ subsets: ['latin'] });
+const robotoMono = Roboto_Mono({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
