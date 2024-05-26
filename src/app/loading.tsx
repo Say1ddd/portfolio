@@ -4,7 +4,7 @@ const Loading = () => {
   return (
     <main className={styles.loading}>
       <span>
-        💀
+        Loading...
       </span>
     </main>
   )
