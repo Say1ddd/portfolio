@@ -5,6 +5,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 const robotoMono = Roboto_Mono({ subsets: ["latin"] });
 
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description: "My personal portfolio website.",
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -12,6 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <link rel="icon" href="/favicon.ico" sizes="any" />
       <body className={inter.className}>{children}</body>
     </html>
   );
